@@ -1,0 +1,10 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: spring-security-resource
+oauth2:
+  resource-id: resource-server
+  check-token-url: http://127.0.0.1:8089/oauth/check_token
+  client-id: oauth-server
+  client-secret: 123456
