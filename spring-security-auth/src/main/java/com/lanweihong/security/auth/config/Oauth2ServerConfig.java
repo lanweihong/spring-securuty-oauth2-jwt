@@ -93,8 +93,8 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        // 使用基于 JDBC 存储模式
-        JdbcClientDetailsService clientDetailsService = new JdbcClientDetailsService(dataSource);
+        // 使用自定义的 ClientDetails ，添加缓存支持
+        CustomClientDetailsService clientDetailsService = new CustomClientDetailsService(dataSource);
         clientDetailsService.setPasswordEncoder(passwordEncoder);
         clients.withClientDetails(clientDetailsService);
     }
